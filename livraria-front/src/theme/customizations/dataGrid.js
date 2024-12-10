@@ -7,7 +7,7 @@ import { listClasses } from '@mui/material/List';
 import { listItemIconClasses } from '@mui/material/ListItemIcon';
 import { menuItemClasses } from '@mui/material/MenuItem';
 import { tablePaginationClasses } from '@mui/material/TablePagination';
-import { gridClasses } from '@mui/x-data-grid';
+// import { gridClasses } from '@mui/x-data-grid';
 import { gray } from '../../shared-theme/themePrimitives';
 
 /* eslint-disable import/prefer-default-export */
@@ -19,12 +19,6 @@ export const dataGridCustomizations = {
         overflow: 'clip',
         borderColor: (theme.vars || theme).palette.divider,
         backgroundColor: (theme.vars || theme).palette.background.default,
-        [`& .${gridClasses.columnHeader}`]: {
-          backgroundColor: (theme.vars || theme).palette.background.paper,
-        },
-        [`& .${gridClasses.footerContainer}`]: {
-          backgroundColor: (theme.vars || theme).palette.background.paper,
-        },
         [`& .${checkboxClasses.root}`]: {
           padding: theme.spacing(0.5),
           '& > svg': {
