@@ -1,0 +1,39 @@
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - ../..:/workspaces:cached
+      
+    command: sleep infinity
+
+    ports:
+      - "3000:3000" # Porta 3000 local mapeada para a porta 3000 do container
+
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432" # Porta 5432 local mapeada para a porta 5432 do container
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80" # Porta 5050 local mapeada para a porta 80 do container
+    depends_on:
+      - db
+
+volumes:
+  postgres-data:

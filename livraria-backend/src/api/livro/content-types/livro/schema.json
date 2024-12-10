@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "livros",
+  "info": {
+    "singularName": "livro",
+    "pluralName": "livros",
+    "displayName": "Livro"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "genero": {
+      "type": "enumeration",
+      "enum": [
+        "romance",
+        "drama",
+        "terror",
+        "comedia"
+      ]
+    },
+    "lancamento": {
+      "type": "date"
+    }
+  }
+}
